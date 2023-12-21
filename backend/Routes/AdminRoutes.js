@@ -100,7 +100,11 @@ const LoginValidator = Joi.object({
 //Login Router
 
 router.post('/Login', async(req, res) => {
-
+try {
+  
+} catch (error) {
+  
+}
 })
 module.exports = router
 
