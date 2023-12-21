@@ -100,23 +100,7 @@ const LoginValidator = Joi.object({
 //Login Router
 
 router.post('/Login', async(req, res) => {
-  try {
-    await LoginValidator.validateAsync(req.body)
-    const p = req.body.AdminPassword
-    
-    const CheckIfExist = await AdminModel.findOne({ AdminName: req.body.AdminName }, { AdminEmail: req.body.AdminEmail }, { AdminPassword: req.body.AdminPassword })
-    
-    if (CheckIfExist) {
-      res.status(200)
-      .send('Login successful')
-    } else {
-      res
-        .status(200)
-        .send({status :'400' ,message:'Invalid Credential'})
-    }
-  } catch (error) {
-    console.log(error) 
-  }
+
 })
 module.exports = router
 
